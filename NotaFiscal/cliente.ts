@@ -1,22 +1,18 @@
-//
-//
-//
-//
-
-import { formaCliente } from "./forma_cliente";
+import { FormaCliente } from "./forma_cliente";
 export class Cliente {
 
-    /* Atributos */
-    private codigo : number; 
-    private cnpjcpf: string;
-    private forma: formaCliente
+    // Os atributos são: 
     private identificacao: number;
-    private nome: string;    
+    private nome: string;
+    private cnpjcpf: string;
+    private forma: FormaCliente; 
+    private codigo : number; 
+   
 
-    /* Métodos */
+    // Os métodos são: 
 
-    /* Método Construtor -> determina que ações devem ser executadas quando da criação de um objeto */    
-    constructor (  codigo: number, cnpjcpf: string, forma: formaCliente, identificacao: number, nome: string) {
+    //Método Construtor -> determina que ações devem ser executadas quando da criação de um objeto 
+    constructor (identificacao : number, nome: string, codigo: number, cnpjcpf: string, forma: FormaCliente) {
         this.identificacao = identificacao;
         this.nome = nome;
         this.codigo = codigo;
@@ -24,18 +20,7 @@ export class Cliente {
         this.forma = forma; 
     }
 
-    /* Métodos Acessores -> forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada. */
-        getcodigo(): number {
-        return this.codigo;
-    }
-
-    getcnpjcpf(): string {
-        return this.cnpjcpf;
-    }
-
-    gettipo(): formaCliente {
-        return this.forma;
-    }
+    //Métodos Acessores -> forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada.
     getid(): number {
         return this.identificacao;
     }
@@ -44,9 +29,20 @@ export class Cliente {
         return this.nome;
     }
 
+    getcodigo(): number {
+        return this.codigo;
+    }
 
+    getcnpjcpf(): string {
+        return this.cnpjcpf;
+    }
 
-    /* Métodos Modificadores -> podem modificar as informações contidas */     
+    gettipo(): FormaCliente {
+        return this.forma;
+    }
+
+    //Métodos Modificadores -> podem modificar as informações contidas
+      
     setnome(nome: string): void {
         this.nome = nome;
     }
@@ -59,9 +55,10 @@ export class Cliente {
         this.cnpjcpf = cnpjcpf;
     } 
 
-    settipo(forma: formaCliente) : void {
+    setforma(forma: FormaCliente) : void {
         this.forma = forma;
     }
 
 
+}
 }
