@@ -1,37 +1,33 @@
-//
-//
-//
-//
-
 import {Cliente} from "./cliente"
-import {TipoCliente} from "./tipo_cliente"
+import {FormaCliente} from "./forma_cliente"
 import {Produto} from "./produto"
 import {NotaFiscal} from "./nota_fiscal"
 import {ItemNotaFiscal} from "./item_nota_fiscal"
 
 //Criar um Cliente 
 
-let cliente = new Cliente(1, "Maria Perreira Jules", 100, "208.783.997-31",TipoCliente.PESSOA_FISICA);
+let cliente = new Cliente(1, "Ana Felipe Bento", 100, "202.446.187-81",FormaCliente.PessoaFisica);
 
 console.log(cliente);
-console.log('++++++++++++++++++++++');
+console.log('++++++++++++++++++++++')
 console.log("Id=" + cliente.getid());
 console.log("Nome=" + cliente.getnome());
 console.log("Codigo=" + cliente.getcodigo());
 console.log("CnpjCpf=" + cliente.getcnpjcpf());
-console.log("TipoCliente=" + cliente.gettipo());
+console.log("FormaCliente=" + cliente.setforma());
 
-let produto1 = new Produto(1, 150, "Pão Liz", 2.50);
-let prpduto2 = new Produto(1, 150, "Arroz Tata", 5.10);
+let p1 = new Produto(1, 150, "CAFÉ PURO", 8.00);
+let p2 = new Produto(9, 500,"ARROZ BRANCO", 7.00);
+
 
 let nf = new NotaFiscal(1, 201, cliente);
 
-let itnf1 = new ItemNotaFiscal(1, 1, 10, produto1);
-let itnf2 = new ItemNotaFiscal(2, 2, 10, produto2);
+let itnf1 = new ItemNotaFiscal(1, 1, 10, p1);
+let itnf2 = new ItemNotaFiscal(9, 9, 10, p2);
 
 
-itnf1.valorItemNotaFiscal();
-itnf2.valorItemNotaFiscal();
+itnf1.PrecoItemNotaFiscal();
+itnf2.PrecoItemNotaFiscal();
 
 
 
@@ -41,6 +37,6 @@ nf.adicionarItem(itnf2);
 
 
 console.log(nf);
-console.log('++++++++++++++++++++++');
+console.log('++++++++++++++++++++++')
 
-nf.ValorTotal()
+nf.PrecoTotal()
