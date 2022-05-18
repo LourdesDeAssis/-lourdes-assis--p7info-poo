@@ -3,25 +3,25 @@
 //
 //
 
-import { TipoCliente } from "./tipo_cliente";
+import { formaCliente } from "./forma_cliente";
 export class Cliente {
 
     /* Atributos */
     private codigo : number; 
     private cnpjcpf: string;
-    private tipo: TipoCliente
-    private id: number;
+    private forma: formaCliente
+    private identificacao: number;
     private nome: string;    
 
     /* Métodos */
 
     /* Método Construtor -> determina que ações devem ser executadas quando da criação de um objeto */    
-    constructor (  codigo: number, cnpjcpf: string, tipo: TipoCliente, id: number, nome: string) {
-        this.id = id;
+    constructor (  codigo: number, cnpjcpf: string, forma: formaCliente, identificacao: number, nome: string) {
+        this.identificacao = identificacao;
         this.nome = nome;
         this.codigo = codigo;
         this.cnpjcpf = cnpjcpf;
-        this.tipo = tipo; 
+        this.forma = forma; 
     }
 
     /* Métodos Acessores -> forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada. */
@@ -33,11 +33,11 @@ export class Cliente {
         return this.cnpjcpf;
     }
 
-    gettipo(): TipoCliente {
-        return this.tipo;
+    gettipo(): formaCliente {
+        return this.forma;
     }
     getid(): number {
-        return this.id;
+        return this.identificacao;
     }
 
     getnome(): string {
@@ -59,8 +59,8 @@ export class Cliente {
         this.cnpjcpf = cnpjcpf;
     } 
 
-    settipo(tipo: TipoCliente) : void {
-        this.tipo = tipo;
+    settipo(forma: formaCliente) : void {
+        this.forma = forma;
     }
 
 
