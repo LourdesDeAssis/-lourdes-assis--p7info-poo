@@ -1,26 +1,21 @@
-//
-//
-//
-//
 export class Produto {
 
-    /* Atributos */
+    // Os atributos são: 
     private id: number;
     private codigo : number; 
     private descricao: string;
-    private valorUnitario : number;    
+    private precoUnico : number;    
 
-    /* Métodos */
 
-    /* Método Construtor */    
-    constructor (id : number, codigo: number, descricao: string, valorUnitario: number) {
+    // O método construtor:   
+    constructor (id : number, codigo: number, descricao: string, precoUnico: number) {
         this.id = id;
         this.codigo = codigo;
         this.descricao = descricao;
-        this.valorUnitario = valorUnitario; 
+        this.precoUnico = precoUnico; 
     }
 
-    /* Métodos Acessores */
+    // Os métodos acessores: 
     getid(): number {
         return this.id;
     }
@@ -33,11 +28,11 @@ export class Produto {
         return this.codigo;
     }
 
-    getvalorUnitario(): number {
-        return this.valorUnitario;
+    getprecoUnico(): number {
+        return this.precoUnico;
     }
 
-        /* Métodos Modificadores */     
+        // Os métodos modificadores:    
     setdescricao(descricao: string): void {
         this.descricao = descricao;
     }
@@ -46,8 +41,8 @@ export class Produto {
         this.codigo = codigo;
     }
 
-    setvalorUnitario(valorUnitario: number): void {
-        this.valorUnitario = valorUnitario;
+    setprecoUnico(precoUnico: number): void {
+        this.precoUnico = precoUnico;
     } 
     
 }
