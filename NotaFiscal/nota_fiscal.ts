@@ -57,6 +57,8 @@ export class NotaFiscal {
     }
 
     // Percorrer o array items e calcular o valor total da NotaFiscal
+    //Array -> principal objetivo é ser um espaço contínuo na memória para organizar e armazenar uma coleção de elementos.
+    
     calcularValorNotaFiscal() : number {
         let valorCalculado = 0;
 
@@ -65,7 +67,7 @@ export class NotaFiscal {
 
     }
 
-    // Imprimir a NotaFiscal conforme o Layout definido
+    // Imprimir a NotaFiscal conforme o Layout que foi previamete posto
     
     imprimirNotaFiscal(): void {
 
