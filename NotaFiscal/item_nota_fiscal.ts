@@ -1,24 +1,19 @@
-//
-//
-//
-//
+
 import {Produto} from "./produto"
 
 export class ItemNotaFiscal {
 
-    /* Atributos */
+    /* Atributos são as propriedades de um objeto */
     id: number;
     sequencial: number; 
     quantidade: number;
     produto : Produto;
     valor : number;    
 
-    /* Métodos */
+    /* Métodos são as ações que um objeto pode realizar. */
 
     /* Método Construtor */    
-    constructor (id : number, 
-                 sequencial: number, 
-                 quantidade: number, 
+    constructor (id : number, sequencial: number, quantidade: number, 
                  produto: Produto
                  ) {
         this.id = id;
@@ -60,6 +55,3 @@ export class ItemNotaFiscal {
     }
     
 }
-//
-//
-//
