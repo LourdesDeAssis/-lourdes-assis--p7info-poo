@@ -3,53 +3,56 @@ import {Produto} from "./produto"
 
 export class ItemNotaFiscal {
 
-    /* Atributos são as propriedades de um objeto */
-    identificacao: number;
-    sequencial: number; 
-    quantidade: number;
+ 
+    id: number;
+    quant: number;
     produto : Produto;
-    valor : number;    
+    preco : number; 
+    sequencial: number; 
+   
 
-    /* Métodos são as ações que um objeto pode realizar. */
-
-    /* Método Construtor */    
-    constructor (identificacao : number, sequencial: number, quantidade: number, produto: Produto) {
-        this.identificacao = identicacao;
+    
+    constructor (id : number, 
+                 sequencial: number, 
+                 quant: number, 
+                 produto: Produto
+                 ) {
+        this.id = id;
         this.sequencial = sequencial;
-        this.quantidade = quantidade;
+        this.quant = quant;
         this.produto = produto; 
-        this.valor = 0.0;
+        this.preco = 0.0;
     }
 
-    /* Métodos Acessores */
+  
     getid(): number {
-        return this.identificacao;
+        return this.id;
     }
 
     getsequencial(): number {
         return this.sequencial;
     }
 
-    getquantidade(): number {
-        return this.quantidade;
+    getquant(): number {
+        return this.quant;
     }
 
     getproduto() : Produto {
         return this.produto;
     }
 
-    getvalor(): number {
-        return this.valor;
+    getpreco(): number {
+        return this.preco;
     }
 
-        /* Métodos Modificadores */     
+        // Os métodos modificadores:    
     setsequencial(sequencial: number): void {
         this.sequencial = sequencial;
     }
 
     
-    valorItemNotaFiscal() : void {
-        this.valor = this.getproduto().getvalorUnitario();
+    PrecoItemNotaFiscal() : void {
+        this.preco = this.getproduto().getprecoUnico();
     }
     
 }
