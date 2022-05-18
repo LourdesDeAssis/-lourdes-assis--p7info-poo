@@ -4,7 +4,7 @@ import {Produto} from "./produto"
 export class ItemNotaFiscal {
 
     /* Atributos são as propriedades de um objeto */
-    id: number;
+    identificacao: number;
     sequencial: number; 
     quantidade: number;
     produto : Produto;
@@ -13,10 +13,8 @@ export class ItemNotaFiscal {
     /* Métodos são as ações que um objeto pode realizar. */
 
     /* Método Construtor */    
-    constructor (id : number, sequencial: number, quantidade: number, 
-                 produto: Produto
-                 ) {
-        this.id = id;
+    constructor (identificacao : number, sequencial: number, quantidade: number, produto: Produto) {
+        this.identificacao = identicacao;
         this.sequencial = sequencial;
         this.quantidade = quantidade;
         this.produto = produto; 
@@ -25,7 +23,7 @@ export class ItemNotaFiscal {
 
     /* Métodos Acessores */
     getid(): number {
-        return this.id;
+        return this.identificacao;
     }
 
     getsequencial(): number {
