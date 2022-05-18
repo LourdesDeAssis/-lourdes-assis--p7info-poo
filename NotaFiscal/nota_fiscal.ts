@@ -1,34 +1,29 @@
 //
-//
-//
-//
 import {Cliente} from "./cliente";
 import {ItemNotaFiscal} from "./item_nota_fiscal";
 export class NotaFiscal {
 
-    /* Atributos */
+    // Os atributos são:
     id: number;
-    codigo:number; 
-    data: Date;
     cliente: Cliente;
     items :  Array<ItemNotaFiscal>;  
-    valorNota : number;
+    precoNota : number;
+    codigo:number; 
+    data: Date;
 
-    /* Métodos */
-
-    /* Método Construtor */    
+    // O métodos são: 
+   
     constructor (id : number, codigo: number, cliente : Cliente ) {
         this.id = id;
         this.codigo = codigo;
         this.data = new Date(); 
         this.cliente = cliente; 
-        this.valorNota =0.0;
+        this.precoNota =0.0;
         this.items = new Array<ItemNotaFiscal>();
 
 
     }
 
-    /* Métodos Acessores */
     getid(): number {
         return this.id;
     }
@@ -41,7 +36,7 @@ export class NotaFiscal {
         return this.data;
     }
 
-    /* Métodos Modificadores */     
+   
     setcodigo(codigo: number): void {
         this.codigo = codigo;
     }
@@ -56,9 +51,7 @@ export class NotaFiscal {
          this.items.push(item);
     }
 
-    // Percorrer o array items e calcular o valor total da NotaFiscal
-    //Array -> principal objetivo é ser um espaço contínuo na memória para organizar e armazenar uma coleção de elementos.
-    
+
     calcularValorNotaFiscal() : number {
         let valorCalculado = 0;
 
@@ -67,21 +60,21 @@ export class NotaFiscal {
 
     }
 
-    // Imprimir a NotaFiscal conforme o Layout que foi previamete posto
+    // Para apresentar a nota fiscal conforme as orientações 
     
     imprimirNotaFiscal(): void {
 
 
     }
     
-    ValorTotal(): void{
+    PrecoTotal(): void{
         let total = 0
 
         for(let i = 0; i < this.items.length; i++){
-        let valor = this.items[i].getquantidade() * this.items[i].getvalor()
+        let valor = this.items[i].getquant() * this.items[i].getpreco()
         total+=valor}
 
-        console.log("O total da sua conta: R$" + total)
+        console.log("O TOTAL DA CONTA É: R$" + total)
     }
 
     
