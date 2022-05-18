@@ -7,16 +7,16 @@ import { TipoCliente } from "./tipo_cliente";
 export class Cliente {
 
     /* Atributos */
-    private id: number;
-    private nome: string;
     private codigo : number; 
     private cnpjcpf: string;
-    private tipo: TipoCliente;    
+    private tipo: TipoCliente
+    private id: number;
+    private nome: string;    
 
     /* Métodos */
 
-    /* Método Construtor */    
-    constructor (id : number, nome: string, codigo: number, cnpjcpf: string, tipo: TipoCliente) {
+    /* Método Construtor -> determina que ações devem ser executadas quando da criação de um objeto */    
+    constructor (  codigo: number, cnpjcpf: string, tipo: TipoCliente, id: number, nome: string) {
         this.id = id;
         this.nome = nome;
         this.codigo = codigo;
@@ -24,16 +24,8 @@ export class Cliente {
         this.tipo = tipo; 
     }
 
-    /* Métodos Acessores */
-    getid(): number {
-        return this.id;
-    }
-
-    getnome(): string {
-        return this.nome;
-    }
-
-    getcodigo(): number {
+    /* Métodos Acessores -> forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada. */
+        getcodigo(): number {
         return this.codigo;
     }
 
@@ -44,9 +36,17 @@ export class Cliente {
     gettipo(): TipoCliente {
         return this.tipo;
     }
+    getid(): number {
+        return this.id;
+    }
+
+    getnome(): string {
+        return this.nome;
+    }
 
 
-    /* Métodos Modificadores */     
+
+    /* Métodos Modificadores -> podem modificar as informações contidas */     
     setnome(nome: string): void {
         this.nome = nome;
     }
