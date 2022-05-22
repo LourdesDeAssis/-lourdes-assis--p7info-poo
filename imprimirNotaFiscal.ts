@@ -1,11 +1,14 @@
 imprimirNotaFiscal(): void {
     var data = new Date();
+    console.log("--------------------------------------------------------------------------------------------------------------------")
     console.log("NOTA FISCAL                                                                                                   ", data)
     console.log("Cliente:",this.cliente.getcodigo(), "      Nome:",this.cliente.getnome() )
     console.log("CPF:",this.cliente.getcnpjcpf())
-    console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     console.log("ITENS")
-    console.log("Seq    descrição                                                               QTD      Preco de cada      Preço   ")
+    console.log("--------------------------------------------------------------------------------------------------------------------")
+    console.log("Seq    descrição                                                               QTD        Preco UNIT        Preço   ")
+    console.log("------------------------------------------------------------------------      -----     -------------     ----------")
     for(let count = 0; count < this.items.length; count++){
         let precoTotal =  this.items[count].getquant() * this.items[count].produto.getprecoUnico()
         this.precoTotal += precoTotal
