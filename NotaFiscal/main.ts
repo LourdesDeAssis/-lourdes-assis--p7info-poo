@@ -38,5 +38,5 @@ nf.adicionarItem(itnf2);
 
 console.log(nf);
 console.log('++++++++++++++++++++++')
-
+nf.calcularValorNotaFiscal()
 nf.PrecoTotal()
