@@ -53,11 +53,15 @@ export class NotaFiscal {
     }
 
 
-    calcularValorNotaFiscal() : number {
-        let valorCalculado = 0;
-        
-        return valorCalculado;
+    calcularValorNotaFiscal() : void{
+        let total = 0
 
+        for(let i = 0; i < this.items.length; i++){
+        let valor = this.items[i].getquant() * this.items[i].getpreco()
+        total+=valor}
+
+        console.log("O TOTAL DA CONTA É: R$" + total)
+  
     }
 
     // Para apresentar a nota fiscal conforme as orientações 
@@ -84,15 +88,7 @@ export class NotaFiscal {
 
     }
     
-    PrecoTotal(): void{
-        let total = 0
-
-        for(let i = 0; i < this.items.length; i++){
-        let valor = this.items[i].getquant() * this.items[i].getpreco()
-        total+=valor}
-
-        console.log("O TOTAL DA CONTA É: R$" + total)
-    }
+    PrecoTotal(): 
 
     
 }
